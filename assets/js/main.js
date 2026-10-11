@@ -4,6 +4,7 @@
    - mark past shows automatically
    - contact form -> mailto (no backend needed)
    - footer year
+   - background song-title wall
 */
 (function () {
   "use strict";
@@ -54,6 +55,22 @@
         "&body=" + encodeURIComponent(body);
     });
   }
+
+  // Background song titles (decorative, hidden from screen readers)
+  var songs = ["Right Back Out", "Tantalize", "I Wanna Know", "Candidiasis",
+    "The Version That Quit", "Fading All That Isn't There", "Another Day", "Rhodesia"];
+  var wall = document.createElement("div");
+  wall.className = "bg-words";
+  wall.setAttribute("aria-hidden", "true");
+  for (var i = 0; i < 6; i++) {
+    songs.forEach(function (title, j) {
+      var span = document.createElement("span");
+      span.textContent = title;
+      if ((i + j) % 2) span.className = "is-outline";
+      wall.appendChild(span);
+    });
+  }
+  document.body.insertBefore(wall, document.body.firstChild);
 
   // Year
   var y = document.querySelector("[data-year]");

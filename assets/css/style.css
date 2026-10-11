@@ -16,6 +16,7 @@
   --red-ink: #c7c7c7;
   --grey: #8f8f8f;
   --line: rgba(255, 255, 255, .14);
+  --bg-words-opacity: .07;
 
   --font-head: Verdana, Geneva, 'DejaVu Sans', Tahoma, sans-serif;
   --font-body: Verdana, Geneva, 'DejaVu Sans', Tahoma, sans-serif;
@@ -53,6 +54,18 @@ h2 { font-size: clamp(2rem, 4.6vw, 3.2rem); }
 h3 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); }
 p { margin: 0 0 1.1em; }
 ::selection { background: var(--red); color: var(--black); }
+
+/* Background song-title wall (injected by main.js) */
+.bg-words {
+  position: fixed; inset: -5vh -5vw; z-index: -1;
+  display: flex; flex-wrap: wrap; align-content: flex-start; gap: 0 .35em;
+  overflow: hidden; pointer-events: none; user-select: none;
+  font-family: var(--font-logo); font-style: italic; text-transform: uppercase;
+  font-size: clamp(3rem, 9vw, 8rem); line-height: .95;
+  color: var(--paper); opacity: var(--bg-words-opacity);
+  transform: rotate(-4deg);
+}
+.bg-words .is-outline { color: transparent; -webkit-text-stroke: 1.5px var(--paper); }
 
 /* 3. Utilities ---------------------------------------------------------- */
 .wrap { width: min(100% - 2 * var(--gutter), var(--max)); margin-inline: auto; }
