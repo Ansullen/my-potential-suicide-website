@@ -59,7 +59,8 @@ p { margin: 0 0 1.1em; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .mt-sm { margin-top: 1.5rem; }
 .mt-lg { margin-top: 3rem; }
-.band-photo { max-width: 600px; }
+.band-photo { max-width: 600px; width: 100%; }
+.about-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
 .ep-cover { max-width: 420px; }
 .prose-w { max-width: 60ch; }
 .align-center { align-items: center; }
@@ -283,6 +284,7 @@ p { margin: 0 0 1.1em; }
   .show .btn { grid-column: 2; justify-self: start; }
   .site-footer .wrap { grid-template-columns: 1fr; }
   .contact-list li { grid-template-columns: 1fr; gap: .2rem; }
+  .about-grid { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
