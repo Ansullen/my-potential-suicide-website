@@ -72,6 +72,47 @@
   }
   document.body.insertBefore(wall, document.body.firstChild);
 
+  // Instagram grid: every post from the Behold feed in data-feed on #instagram-grid
+  var igSection = document.getElementById("instagram-grid");
+  if (igSection) {
+    var grid = igSection.querySelector(".ig-grid");
+    var feed = (igSection.getAttribute("data-feed") || "").trim();
+
+    var showEmpty = function () {
+      var p = document.createElement("p");
+      p.className = "social-embed__empty";
+      p.textContent = "Follow us on Instagram for the latest posts.";
+      grid.replaceWith(p);
+    };
+
+    var buildGrid = function (posts) {
+      posts.forEach(function (post) {
+        var sizes = post.sizes || {};
+        var src = (sizes.medium && sizes.medium.mediaUrl) || post.thumbnailUrl || post.mediaUrl;
+        if (!src || !post.permalink) return;
+        var a = document.createElement("a");
+        a.className = "ig-tile" + (post.mediaType === "VIDEO" ? " ig-tile--video" : "");
+        a.href = post.permalink; a.target = "_blank"; a.rel = "noopener";
+        var img = document.createElement("img");
+        img.src = src;
+        img.loading = "lazy";
+        img.alt = (post.prunedCaption || post.caption || "Instagram post").slice(0, 120);
+        a.appendChild(img);
+        grid.appendChild(a);
+      });
+      if (!grid.children.length) showEmpty();
+    };
+
+    if (feed && window.fetch) {
+      fetch(feed)
+        .then(function (r) { return r.json(); })
+        .then(function (data) { buildGrid(Array.isArray(data) ? data : (data.posts || [])); })
+        .catch(showEmpty);
+    } else {
+      showEmpty();
+    }
+  }
+
   // Year
   var y = document.querySelector("[data-year]");
   if (y) y.textContent = new Date().getFullYear();

@@ -46,23 +46,54 @@
 <main id="main">
 
   <section class="section">
-    <div class="wrap">
-      <article class="card card--embed">
-        <h3>Latest Release</h3>
-        <div class="embed">
-          <iframe src="https://open.spotify.com/embed/album/6Q3QBJef1r26bhVUXbRFb3?utm_source=generator" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Fading All That Isn't There on Spotify"></iframe>
-        </div>
-        <div class="links">
-          <a class="inline-link" href="pages/music.html">Full details</a>
-        </div>
-      </article>
+    <div class="wrap latest-grid">
+      <div class="latest-col">
+        <article class="card card--embed">
+          <h3>Latest Release</h3>
+          <div class="embed">
+            <iframe src="https://open.spotify.com/embed/album/6Q3QBJef1r26bhVUXbRFb3?utm_source=generator" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Fading All That Isn't There on Spotify"></iframe>
+          </div>
+          <div class="links">
+            <a class="inline-link" href="pages/music.html">Full details</a>
+          </div>
+        </article>
+
+        <!-- TikTok creator embed: always shows the newest videos from the profile -->
+        <article class="card card--embed social-embed">
+          <h3>TikTok</h3>
+          <div class="social-embed__body">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@myposuband1" data-unique-id="myposuband1" data-embed-type="creator" style="max-width: 780px; min-width: 288px;">
+              <section><a target="_blank" rel="noopener" href="https://www.tiktok.com/@myposuband1?refer=creator_embed">@myposuband1</a></section>
+            </blockquote>
+          </div>
+          <div class="links">
+            <a class="inline-link" href="https://www.tiktok.com/@myposuband1" target="_blank" rel="noopener">@myposuband1</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="latest-social">
+        <!-- Instagram grid: every post from the Behold feed (data-feed), newest first. New posts appear automatically. -->
+        <article class="card card--embed social-embed" id="instagram-grid" data-feed="https://feeds.behold.so/EAsJ2zr057UZCG2y5wsD">
+          <h3>Instagram</h3>
+          <div class="ig-grid"></div>
+          <div class="links">
+            <a class="inline-link" href="https://instagram.com/mypotentialsuicide" target="_blank" rel="noopener">@mypotentialsuicide</a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">Latest YouTube Video</h2>
+        <a class="btn btn--ghost" href="https://www.youtube.com/@mypotentialsuicideband" target="_blank" rel="noopener">YouTube channel</a>
+      </div>
+      <!-- Channel uploads playlist (UU + channel ID): always starts on the newest upload -->
       <div class="card video-frame">
-        <iframe src="https://www.youtube.com/embed/8HPJScgiKs4" title="My Potential Suicide - Realized [Demo]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/videoseries?list=UUw_ccU4PG2dUO5cVcqoqycg" title="Latest My Potential Suicide video on YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -103,5 +134,6 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>
