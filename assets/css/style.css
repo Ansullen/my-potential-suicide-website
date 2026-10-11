@@ -282,7 +282,10 @@ p { margin: 0 0 1.1em; }
 .page-hero p { max-width: 55ch; font-size: 1rem; opacity: .75; }
 
 .members { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
-.members li { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+.members li { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+.member__bio { flex-basis: 100%; }
+.member__bio p { margin: 0 0 1rem; opacity: .85; }
+.member__bio .embed { margin-bottom: 0; }
 .members strong { font-family: var(--font-head); font-weight: 700; font-size: 1.15rem; text-transform: uppercase; }
 .members span { font-family: var(--font-mono); font-size: .82rem; opacity: .6; text-transform: uppercase; letter-spacing: .04em; }
 
