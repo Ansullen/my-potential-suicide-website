@@ -208,6 +208,13 @@ p { margin: 0 0 1.1em; }
 .social-embed__body { margin: .3rem 0 1rem; }
 .social-embed__body blockquote { margin: 0 !important; }
 .social-embed__body iframe { max-width: 100% !important; }
+/* SociableKIT TikTok widget: just the latest video thumbnail, no profile header or load-more */
+.social-embed__body .sk-tiktok-feed { width: 100% !important; max-width: 260px !important; background: transparent !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; }
+.sk-tiktok-feed .sk-posts-header, .sk-tiktok-feed .sk-posts-footer { display: none !important; }
+.sk-tiktok-feed .sk-posts-body, .sk-tiktok-feed .sk-posts-grid { padding: 0 !important; margin: 0 !important; background: transparent !important; }
+.sk-tiktok-feed .sk-posts-grid { display: block !important; }
+.sk-tiktok-feed .sk-post-item, .sk-tiktok-feed .sk-post-image { width: 100% !important; margin: 0 !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; }
+.sk-tiktok-feed .sk_branding { height: 0 !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; visibility: hidden !important; }
 .ig-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; margin: .3rem 0 1rem; }
 .ig-tile { position: relative; display: block; aspect-ratio: 1 / 1; overflow: hidden; background: var(--black-2); }
 .ig-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .25s ease, opacity .25s ease; }
